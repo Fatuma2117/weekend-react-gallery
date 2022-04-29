@@ -1,13 +1,16 @@
 
-// function GalleryList({galleryList}) {
-//   console.log('GalleryList: The Prop:', GalleryList);
-//   return (
-//     <ul>
-//     {galleryList.map((gallery) => {
-//       return <li key={gallery.id}> path={gallery.path} description={gallery.description}</li>
-//     })}
-//   </ul>
-//   )
-// }
+function GalleryList({galleryList}) {
+  console.log('GalleryList: The Prop:', GalleryList);
+  return (
+    <ul>
+    {galleryList.map((gallery) => {
+      return < GalleryItem 
+            key={gallery.id}
+            item={gallery}
+           />
+    })}
+  </ul>
+  )
+}
 
-// export default GalleryList;
+export default GalleryList;

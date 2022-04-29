@@ -1,9 +1,9 @@
-// function GalleryItem({galleryItem}) {
-//     return (
-//       <li>
-//         {gallery.path} {gallery.description}
-//       </li>
-//     )
-//   }
+function GalleryItem({gallery}) {
+    return (
+      <li>
+        {gallery.path} {gallery.description}
+      </li>
+    )
+  }
   
-//   export default GalleryItem;
+  export default GalleryItem;
