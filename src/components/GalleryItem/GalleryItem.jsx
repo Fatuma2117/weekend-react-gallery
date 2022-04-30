@@ -4,28 +4,35 @@ import './GalleryItem.css'
 
 function GalleryItem({gallery}) {
 const [imageForward,setImageForward]= useState(true)
+const [likesNumber,setLikesNumber]=useState(0)
 
-const flipImage = () => {
+ const addLike =()=>{
+      setLikesNumber(likesNumber + 1)
+    
+
+  }
+const toggleImage = () => {
     setImageForward(!imageForward)
   }
 
   const renderImage = ()=>{
-      if(flipImage){
-        return <img src={image.path}></img>
+      if(toggleImage){
+        return <img src={gallery.path}></img>
       }else{
-          return <p>{image.description}</p>
+          return <p>{gallery.description}</p>
       }
   }
 
-
-
+ 
     return (
     <div>
-         <li onClick={flipImage}>
-        {gallery.path} {gallery.description} {gallery.likes}
+         <li onClick={toggleImage}>{renderImage()}
+        <p>{gallery.description}</p> 
         </li>
-        <button>LIKE</button> 
+        <p>{likesNumber}</p>
+        <button onClick={addLike}>LIKE</button> 
     </div>
+   
     
     )
   }
