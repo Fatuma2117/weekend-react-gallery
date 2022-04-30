@@ -1,16 +1,22 @@
 .App {
   text-align: center;
+
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(57, 124, 57);
   padding: 1em;
-  color: white;
+  color:rgb(247, 241, 227);
   margin-bottom: 1em;
+  border: 2ch double rgb(247, 241, 227);
+
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 5em;
+  font-family: "Times New Roman", Times, serif;
+  
+
   
 }
 
