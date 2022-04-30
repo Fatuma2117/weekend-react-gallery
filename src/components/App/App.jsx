@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
-// import GalleryItem from '../GalleryItem/GalleryItem';
-
 
 function App() {
   useEffect(() => {
@@ -24,24 +22,19 @@ const [galleryList,setGalleryList]=useState([])
       console.log('GET /gallery broke:', error);
     })
   }
-  const updateImage = () => {
+  const updateGallery = (galleryId) => {
   
-    axios
-      .put(`/like/:id${gallery.id}`)
-      .then((response) => {
+    axios({
+      method: 'PUT',
+      url:`./gallery/like/${galleryId}`
+    }).then((response) => {
+        console.log(response)
         getGallery();
       })
       .catch((error) => {
         console.log('Error updating ', error);
-      });
+      })
   };
-
-
-
-
-
-
-
 
     return (
       <div className="App .gallery" >
@@ -50,9 +43,8 @@ const [galleryList,setGalleryList]=useState([])
         </header>
         
         <GalleryList
-         galleryList={galleryList}/>
-       
-
+         galleryList={galleryList}
+         updateGallery={updateGallery}/>
        
       </div>
     );

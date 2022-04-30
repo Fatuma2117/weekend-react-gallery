@@ -1,9 +1,11 @@
 ul{
-background-color: rgb(57, 124, 57);
+background-color: rgb(106, 174, 106);
 list-style-type: none;
-border: 2ch double rgb(247, 241, 227);
+border: 1ch double rgb(247, 241, 227);
 font-family: "Times New Roman", Times, serif;
 color:rgb(247, 241, 227);
+font-size: 20px;
+display: flex;
 }
 
 .gallery{
@@ -15,3 +17,6 @@ color:rgb(247, 241, 227);
     border: 3ch rgb(15, 14, 12)  dotted; 
 }
 
+img {
+    border: .5ch solid rgb(247, 241, 227);
+  }

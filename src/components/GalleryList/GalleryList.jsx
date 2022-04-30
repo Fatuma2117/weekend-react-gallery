@@ -1,12 +1,12 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
 
-function GalleryList({galleryList}) {
+function GalleryList({galleryList,updateGallery}) {
 //   console.log('GalleryList: The Prop:', GalleryList);
   return (
     <ul>
     {galleryList.map((gallery) => {
-      return < GalleryItem key={gallery.id} gallery={gallery} />
+      return < GalleryItem key={gallery.id} gallery={gallery} updateGallery={updateGallery}/>
     })}
   </ul>
   )

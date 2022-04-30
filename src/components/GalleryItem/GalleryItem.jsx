@@ -1,47 +1,56 @@
-import {useState} from 'react'
+import e from 'express'
+import { useState } from 'react'
 import './GalleryItem.css'
 
 
-function GalleryItem({gallery}) {
-const [isImage,setIsImage]= useState(true)
-const [likesNumber,setLikesNumber]=useState(0)
+function GalleryItem({ gallery, updateGallery }) {
+  const [isImage, setIsImage] = useState(true)
+  const [likesNumber, setLikesNumber] = useState(0)
 
- const addLike =()=>{
-      setLikesNumber(likesNumber + 1)
-    //   console.log('button clicked')
-    
+  //  const addLike =()=>{
+  //       setLikesNumber(likesNumber + 1)
+  //     //   console.log('button clicked')
 
+  //   }
+
+  const handleLike = () => {
+    e.preventDefault();
+    updateGallery(gallery.id)
   }
-const toggleImage = () => {
+
+  const flipImage = () => {
     setIsImage(!isImage)
-    console.log('image clicked')
-  }
-
-  const renderImage = ()=>{
-      if(toggleImage){
-        return <img className = '.gallery'src={gallery.path}></img>
-        // "flipped image"
-        
-      }else{
-          return  <p>{gallery.description}</p>
-        //   "does this flip?"
-        
-      }
   }
 
 
- 
-    return (
-    <div className= '.gallery'>
-         <li onClick={toggleImage}>{renderImage()}
-        <p>{gallery.description}</p> 
-        </li>
-        <p>❤️{likesNumber}</p>
-        <button className = ".button"onClick={addLike}>LIKE</button> 
+  const renderImage = () => {
+    if (isImage) {
+      return <img className='.gallery' src={gallery.path}></img>
+      // "flipped image"
+
+    } else {
+      return <p>{gallery.description}</p>
+      //   "does this flip?"
+
+    }
+  }
+  // console.log(gallery.path)
+
+
+  return (
+
+    <div onClick={flipImage} className='.gallery'>
+      <li >
+        {renderImage()}
+      </li>
+      LIKES: {gallery.likes}
+      <button className=".button" onClick={handleLike}>❤️</button>
+      {/* <footer>Copyright Reserved 2022 ©</footer> */}
     </div>
-   
-    
-    )
-  }
-  
-  export default GalleryItem;
+
+
+
+  )
+}
+
+export default GalleryItem;
