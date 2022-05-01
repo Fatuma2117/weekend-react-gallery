@@ -1,4 +1,4 @@
-import e from 'express'
+
 import { useState } from 'react'
 import './GalleryItem.css'
 
@@ -14,7 +14,7 @@ function GalleryItem({ gallery, updateGallery }) {
   //   }
 
   const handleLike = () => {
-    e.preventDefault();
+    // e.preventDefault();
     updateGallery(gallery.id)
   }
 
@@ -39,8 +39,8 @@ function GalleryItem({ gallery, updateGallery }) {
 
   return (
 
-    <div onClick={flipImage} className='.gallery'>
-      <li >
+    <div className='.gallery'>
+      <li onClick={flipImage} >
         {renderImage()}
       </li>
       LIKES: {gallery.likes}

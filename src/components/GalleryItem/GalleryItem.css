@@ -5,7 +5,7 @@ border: 1ch double rgb(247, 241, 227);
 font-family: "Times New Roman", Times, serif;
 color:rgb(247, 241, 227);
 font-size: 20px;
-display: flex;
+/* display: flex; */
 }
 
 .gallery{
