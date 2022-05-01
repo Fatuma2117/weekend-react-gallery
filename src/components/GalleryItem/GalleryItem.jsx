@@ -29,7 +29,7 @@ function GalleryItem({ gallery, updateGallery }) {
       // "flipped image"
 
     } else {
-      return <p>{gallery.description}</p>
+      return <p className='back'>{gallery.description}</p>
       //   "does this flip?"
 
     }

@@ -5,7 +5,14 @@ border: 1ch double rgb(247, 241, 227);
 font-family: "Times New Roman", Times, serif;
 color:rgb(247, 241, 227);
 font-size: 20px;
-/* display: flex; */
+display: flexbox;
+}
+
+.back{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(106, 174, 106);
+    text-align: center;
 }
 
 .gallery{
