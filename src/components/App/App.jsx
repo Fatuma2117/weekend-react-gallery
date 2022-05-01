@@ -9,7 +9,7 @@ function App() {
     getGallery();
   }, [])
 
-const [galleryList,setGalleryList]=useState([])
+  const [galleryList, setGalleryList] = useState([])
 
   const getGallery = () => {
     axios({
@@ -23,31 +23,31 @@ const [galleryList,setGalleryList]=useState([])
     })
   }
   const updateGallery = (galleryId) => {
-  
+
     axios({
       method: 'PUT',
-      url:`./gallery/like/${galleryId}`
+      url: `./gallery/like/${galleryId}`
     }).then((response) => {
-        console.log(response)
-        getGallery();
-      })
+      console.log(response)
+      getGallery();
+    })
       .catch((error) => {
         console.log('Error updating ', error);
       })
   };
 
-    return (
-      <div className="App .gallery" >
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        
-        <GalleryList
-         galleryList={galleryList}
-         updateGallery={updateGallery}/>
-       
-      </div>
-    );
+  return (
+    <div className="App .gallery" >
+      <header className="App-header">
+        <h1 className="App-title">Gallery of My Life</h1>
+      </header>
+
+      <GalleryList
+        galleryList={galleryList}
+        updateGallery={updateGallery} />
+
+    </div>
+  );
 }
 
 export default App;

@@ -5,7 +5,7 @@ import './GalleryItem.css'
 
 function GalleryItem({ gallery, updateGallery }) {
   const [isImage, setIsImage] = useState(true)
-  const [likesNumber, setLikesNumber] = useState(0)
+  // const [likesNumber, setLikesNumber] = useState(0)
 
   //  const addLike =()=>{
   //       setLikesNumber(likesNumber + 1)
@@ -16,11 +16,11 @@ function GalleryItem({ gallery, updateGallery }) {
   const handleLike = () => {
     // e.preventDefault();
     updateGallery(gallery.id)
-  }
+  };
 
   const flipImage = () => {
     setIsImage(!isImage)
-  }
+  };
 
 
   const renderImage = () => {
